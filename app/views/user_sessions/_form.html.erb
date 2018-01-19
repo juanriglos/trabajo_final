@@ -1,3 +1,6 @@
+<%= stylesheet_link_tag "style" %>
+
+<div class="signin">
 <%= form_tag user_sessions_path, :method => :post do %>
     <div class="field">
       <%= label_tag :email %><br />
@@ -5,9 +8,10 @@
     </div>
     <div class="field">
       <%= label_tag :password %><br />
-      <%= password_field_tag :password %>
+      <%= password_field_tag :password%>
     </div>
     <div class="actions">
-      <%= submit_tag "Login" %>
+      <%= submit_tag "Login", class: "btn btn-primary btn-block" %>
     </div>
 <% end %>
+</div>
