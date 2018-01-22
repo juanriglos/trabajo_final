@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   skip_before_action :require_login, only: [:new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
@@ -29,8 +30,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        redirect_to(:users, notice: 'User was successfully created')
-        # format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to users_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
