@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
   get 'user_sessions/new'
-
   get 'user_sessions/create'
-
   get 'user_sessions/destroy'
-
 
 
   resources :home, only: [:index]
@@ -14,6 +11,8 @@ Rails.application.routes.draw do
   resources :users
   resources :turns
   resources :resources
+
+  get to:'home#indexadmin'
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout

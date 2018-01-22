@@ -6,7 +6,12 @@ class UserSessionsController < ApplicationController
 
   def create
     if @user = login(params[:email], params[:password])
-      redirect_back_or_to(:users, notice: 'Login satisfactorio')
+      if @user.role == 'admin'
+        render 'home/indexadmin'
+      else
+      redirect_to home_index_path, notice: 'Login satisfactorio'
+      # redirect_back_or_to(:root_path, notice: 'Login satisfactorio')
+      end
     else
       flash.now[:alert] = 'Fallo Login'
       render action: 'new'
@@ -15,6 +20,6 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to(:users, notice: 'Cerro Sesion!')
+    redirect_to home_index_path, notice: 'Cerro Sesion!'
   end
 end
