@@ -5,13 +5,15 @@ Rails.application.routes.draw do
 
   get 'user_sessions/destroy'
 
-  resources :turns
-  resources :resources
 
 
-  root :to => 'users#index'
+  resources :home, only: [:index]
+
+  root :to => 'home#index'
   resources :user_sessions
   resources :users
+  resources :turns
+  resources :resources
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout

@@ -1,5 +1,9 @@
-<h1>New Resource</h1>
+<%= stylesheet_link_tag "style" %>
 
-<%= render 'form', resource: @resource %>
+<div class="signin">
+<h1>Nuevo Recurso</h1>
+
+<%= render 'form', resource: @resource, mensaje: "Nuevo Recurso" %>
 
 <%= link_to 'Back', resources_path %>
+</div>

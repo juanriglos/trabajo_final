@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :resource_name %>
+    <%= form.label :name, 'Nombre' %>
+    <%= form.text_field :name, id: :resource_name,class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= submit_tag (mensaje) , class: "btn btn-primary btn-block" %>
   </div>
 <% end %>

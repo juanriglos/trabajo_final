@@ -1,5 +1,9 @@
-<h1>New User</h1>
+<%= stylesheet_link_tag "style" %>
 
-<%= render 'form', user: @user %>
+<div class="signin">
+<h1>Nuevo Usuario</h1>
 
-<%= link_to 'Back', users_path %>
+<%= render 'form', user: @user, mensaje: "Nuevo Usuario" %>
+
+<%= link_to 'Atras', users_path %>
+</div>

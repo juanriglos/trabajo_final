@@ -1,6 +1,10 @@
-<h1>Editing Resource</h1>
+<%= stylesheet_link_tag "style" %>
 
-<%= render 'form', resource: @resource %>
+<div class="signin">
+<h1>Editar Recurso</h1>
 
-<%= link_to 'Show', @resource %> |
-<%= link_to 'Back', resources_path %>
+<%= render 'form', resource: @resource, mensaje: "Editar Recurso" %>
+
+<%= link_to 'Ver', @resource %> |
+<%= link_to 'Atras', home_index_path %>
+</div>

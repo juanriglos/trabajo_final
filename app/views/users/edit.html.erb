@@ -1,6 +1,10 @@
-<h1>Editing User</h1>
+<%= stylesheet_link_tag "style" %>
 
-<%= render 'form', user: @user %>
+<div class="signin">
+<h1>Editar Usuario</h1>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<%= render 'form', user: @user, mensaje: "Editar Usuario" %>
+
+<%= link_to 'Ver', @user %> |
+<%= link_to 'Atras', home_index_path %>
+</div>

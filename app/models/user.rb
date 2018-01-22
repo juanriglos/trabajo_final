@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :turns
+  enum role: %i[admin normal]
 
   authenticates_with_sorcery!
 

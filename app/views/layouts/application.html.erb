@@ -11,7 +11,7 @@
 
 <div id="nav">
   <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+      <%= link_to "Editar Perfil", edit_user_path(current_user.id) %>
       <%= link_to "Logout", :logout, method: :post %>
   <% else %>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
