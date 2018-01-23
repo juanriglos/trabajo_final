@@ -1,5 +1,6 @@
 class UserSessionsController < ApplicationController
   skip_before_action :require_login, except: [:destroy]
+
   def new
     @user = User.new
   end
@@ -21,6 +22,6 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to home_index_path, notice: 'Cerro Sesion!'
+    redirect_to login_path, notice: 'Cerro Sesion!'
   end
 end
