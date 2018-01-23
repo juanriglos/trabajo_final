@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   resources :turns
   resources :resources
 
-  get to:'home#indexadmin'
+  # get to:'home#indexadmin'
+
+  get :index_admin, to: 'home#index_admin'
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout

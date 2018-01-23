@@ -7,7 +7,8 @@ class UserSessionsController < ApplicationController
   def create
     if @user = login(params[:email], params[:password])
       if @user.role == 'admin'
-        render 'home/indexadmin'
+        # render 'home/index_admin'
+        redirect_to index_admin_path, notice: 'Login satisfactorio'
       else
       redirect_to home_index_path, notice: 'Login satisfactorio'
       # redirect_back_or_to(:root_path, notice: 'Login satisfactorio')
