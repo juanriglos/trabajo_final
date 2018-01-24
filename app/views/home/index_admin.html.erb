@@ -1,13 +1,13 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><# notice %></p>-->
 
 <h1>Usuarios Admin</h1>
 
-<table class="table">
-  <thead>
+<table class="table table-hover-responsive">
+  <thead class="thead-inverse">
   <tr>
     <th scope="row">Email</th>
-    <th scope="row">Crypted password</th>
-    <th scope="row">Salt</th>
+    <!--<th scope="row">Crypted password</th>-->
+    <!--<th scope="row">Salt</th>-->
     <th scope="row" colspan="3"></th>
   </tr>
   </thead>
@@ -16,8 +16,8 @@
   <% @users.each do |user| %>
       <tr>
         <td><%= user.email %></td>
-        <td><%= user.crypted_password %></td>
-        <td><%= user.salt %></td>
+        <!--<td><# user.crypted_password %></td>-->
+        <!--<td>< user.salt %></td>-->
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,7 +25,7 @@
   <% end %>
   </tbody>
 </table>
-
+<span class="iconic iconic-star" title="star"></span>
 <br>
 
 
@@ -34,7 +34,7 @@
 <table  class="table">
   <thead>
   <tr>
-    <th scope="row">Name</th>
+    <th scope="row">Nombre</th>
     <th scope="row" colspan="3"></th>
   </tr>
   </thead>
@@ -51,7 +51,10 @@
   </tbody>
 </table>
 <br>
-
-<%= link_to 'New User', new_user_path %>
-<br>
-<%= link_to 'Nuevo Recurso', new_resource_path %>
+<button type="button" class="btn btn-primary">
+<%= link_to 'Nuevo Usuario', new_user_path ,{:style=>"color:#fff;"}%>
+</button>
+<br><br>
+<button type="button" class="btn btn-primary">
+<%= link_to 'Nuevo Recurso', new_resource_path,{:style=>"color:#fff;"} %>
+</button>

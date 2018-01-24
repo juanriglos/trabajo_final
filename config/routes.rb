@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :home, only: [:index]
 
-  root :to => 'home#index'
+  root :to => 'user_sessions#new'
   resources :user_sessions
   resources :users
   resources :turns
