@@ -21,20 +21,30 @@ class TurnsController < ApplicationController
   def edit
   end
 
-  # POST /turns
+  # POST /turns+
   # POST /turns.json
   def create
     @turn = Turn.new(turn_params)
-
+    @turn.user = current_user
     respond_to do |format|
       if @turn.save
-        format.html { redirect_to @turn, notice: 'Turn was successfully created.' }
+        format.html { redirect_to @turn, notice: 'Turno fue satisfactoriamente creado.' }
         format.json { render :show, status: :created, location: @turn }
       else
         format.html { render :new }
         format.json { render json: @turn.errors, status: :unprocessable_entity }
       end
     end
+
+    # respond_to do |format|
+    #   if @turn.save
+    #     format.html { redirect_to @turn, notice: 'Turno fue satisfactoriamente creado.' }
+    #     format.json { render :show, status: :created, location: @turn }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @turn.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /turns/1
@@ -42,7 +52,7 @@ class TurnsController < ApplicationController
   def update
     respond_to do |format|
       if @turn.update(turn_params)
-        format.html { redirect_to @turn, notice: 'Turn was successfully updated.' }
+        format.html { redirect_to @turn, notice: 'Turno se actualizo correctamente.' }
         format.json { render :show, status: :ok, location: @turn }
       else
         format.html { render :edit }
@@ -56,7 +66,7 @@ class TurnsController < ApplicationController
   def destroy
     @turn.destroy
     respond_to do |format|
-      format.html { redirect_to turns_url, notice: 'Turn was successfully destroyed.' }
+      format.html { redirect_to turns_url, notice: 'Turn se elimino correctamente.' }
       format.json { head :no_content }
     end
   end

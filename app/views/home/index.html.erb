@@ -1,59 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Usuarios</h1>
+<h1>Turnos</h1>
 
 <table>
   <thead>
   <tr>
-    <th>Email</th>
-    <th>Crypted password</th>
-    <th>Salt</th>
-    <th>Rol</th>
+    <th>Comienzo</th>
+    <th>Fin</th>
     <th colspan="3"></th>
   </tr>
   </thead>
 
   <tbody>
-  <% @users.each do |user| %>
+  <% @turns.each do |turn| %>
       <tr>
-        <td><%= user.email %></td>
-        <td><%= user.crypted_password %></td>
-        <td><%= user.salt %></td>
-        <td><%= user.role %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<br>
-
-
-<h1>Recursos</h1>
-
-<table>
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @resources.each do |resource| %>
-      <tr>
-        <td><%= resource.name %></td>
-        <td><%= link_to 'Show', resource %></td>
-        <td><%= link_to 'Edit', edit_resource_path(resource) %></td>
-        <td><%= link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= turn.start_date %></td>
+        <td><%= turn.end_time %></td>
+        <td><%= link_to 'Ver', turn %></td>
+        <td><%= link_to 'Editar', edit_turn_path(turn) %></td>
+        <td><%= link_to 'Eliminar', turn, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
   <% end %>
   </tbody>
 </table>
 <br>
 
-<%= link_to 'New User', new_user_path %>
-<br>
-<%= link_to 'Nuevo Recurso', new_resource_path %>
+<%= link_to 'Nuevo Turno', new_turn_path %>
