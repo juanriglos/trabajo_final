@@ -2,11 +2,12 @@
 
 <h1>Turnos</h1>
 
-<table>
-  <thead>
+<table class="table table-hover-responsive">
+  <thead class="thead-inverse">
   <tr>
-    <th>Comienzo</th>
-    <th>Fin</th>
+    <th scope="row">Fecha de Comienzo</th>
+    <th scope="row">Fecha de Fin</th>
+    <th scope="row">Recurso</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -16,6 +17,11 @@
       <tr>
         <td><%= turn.start_date %></td>
         <td><%= turn.end_time %></td>
+        <td>
+        <% turn.resources.each do |resource|%>
+          <%=resource.name%>
+        <%end%>
+        </td>
         <td><%= link_to 'Ver', turn %></td>
         <td><%= link_to 'Editar', edit_turn_path(turn) %></td>
         <td><%= link_to 'Eliminar', turn, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
@@ -24,5 +30,6 @@
   </tbody>
 </table>
 <br>
-
-<%= link_to 'Nuevo Turno', new_turn_path %>
+<button type="button" class="btn btn-primary">
+  <%= link_to 'Nuevo Turno', new_turn_path ,{:style=>"color:#fff;"}%>
+</button>

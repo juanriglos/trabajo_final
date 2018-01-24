@@ -21,6 +21,13 @@
     <%= form.datetime_select :end_time, id: :turn_end_time %>
   </div>
 
+    <div class="field">
+      <%= form.label :Recursos %>
+      <%= form.collection_select :resource_ids, Resource.all, :id, :name, {
+          include_blank: false
+      }, {multiple:true, class: 'form-control'} %>
+    </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

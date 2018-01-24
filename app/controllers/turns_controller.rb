@@ -79,6 +79,6 @@ class TurnsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def turn_params
-      params.require(:turn).permit(:start_date, :end_time)
+      params.require(:turn).permit(:start_date, :end_time, resource_ids: [])
     end
 end
