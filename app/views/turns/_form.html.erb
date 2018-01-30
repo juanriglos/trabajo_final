@@ -23,12 +23,19 @@
 
     <div class="field">
       <%= form.label :Recursos %>
-      <%= form.collection_select :resource_ids, Resource.all, :id, :name, {
+      <%=
+        form.collection_select :resource_ids, Resource.all, :id, :name, {
           include_blank: false
-      }, {multiple:true, class: 'form-control'} %>
+      }, {multiple:true, class: 'form-control'}
+      %>
     </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <!--<div class="actions">-->
+    <!--<#%= form.submit %>-->
+  <!--</div>-->
+
+    <div class="actions">
+      <%= submit_tag mensaje, class: "btn btn-primary" %>
+    </div>
+
 <% end %>

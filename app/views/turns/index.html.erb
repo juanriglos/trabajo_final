@@ -5,8 +5,8 @@
 <table class="table table-hover-responsive">
   <thead class="thead-inverse">
     <tr>
-      <th scope="row">Start date</th>
-      <th scope="row">End time</th>
+      <th scope="row">Fecha de inicio</th>
+      <th scope="row">Fecha de fin</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,7 +18,7 @@
         <td><%= turn.end_time %></td>
         <td><%= link_to 'Show', turn %></td>
         <td><%= link_to 'Edit', edit_turn_path(turn) %></td>
-        <td><%= link_to 'Destroy', turn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', turn, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Turn', new_turn_path %>
+<%= link_to 'Nuevo Turno', new_turn_path %>

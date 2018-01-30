@@ -6,4 +6,5 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 #Load all files from db/seeds in
-alphabetical order Dir[File.join(Rails.root,'db','seeds','*.rb')].sort.each{|seeds| load seeds }
+# alphabetical order
+Dir[File.join(Rails.root,'db','seeds','*.rb')].sort.each{|seeds| load seeds }
