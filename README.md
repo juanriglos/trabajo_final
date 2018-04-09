@@ -11,7 +11,7 @@ Posicionados en el directorio proyecto ejecutar en linea de comando
  ```
 Para ejecutar la aplicacion ingresar en el navegador a localhost:3000
 
-#Gema
+
 **Sorcery** para la administración de roles
 
 **Bootstrap** para frontend
