@@ -3,11 +3,12 @@
 #Configuracion
 
 Posicionados en el directorio proyecto ejecutar en linea de comando
-
+```
  bundle install
  bundle exec rake db:migrate
  bundle exec rake db:seed
  bundle exec rails s
+ ```
 Para ejecutar la aplicacion ingresar en el navegador a localhost:3000
 
 #Gema
@@ -15,16 +16,17 @@ Para ejecutar la aplicacion ingresar en el navegador a localhost:3000
 
 
 **Usuario nuevo** tiene validaciones  
+```
   Password is too short (minimum is 3 characters)
   Password confirmation doesn't match Password
   Password confirmation can't be blank
-
+```
 **Bootstrap** para frontend
 
 
 #Roles
 
-**usuario administrador** agregado con  bundle exec rake db:seed
+**usuario administrador** agregado con ``` bundle exec rake db:seed```
 Usuario: admin@admin.com
 Password: 111
 
